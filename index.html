@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>イベント手順サイト</title>
+
+  <!-- テーマ（見た目） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+
+  <style>
+    /* ====== iPad向け読みやすさ調整 ====== */
+    :root { --base-font-size: 18px; }
+    body { font-size: var(--base-font-size); }
+    .markdown-section h1 { font-size: 2rem; }
+    .markdown-section h2 { font-size: 1.6rem; }
+    .markdown-section p, .markdown-section li { font-size: 1.12rem; line-height: 1.9; }
+
+    /* ====== 中央の大きいGIF用 ====== */
+    .hero { display: flex; justify-content: center; margin: 12px 0 24px; }
+    .hero img {
+      width: min(92vw, 900px);
+      max-width: 100%;
+      border-radius: 16px;
+    }
+
+    /* ====== 前へ／次へ（docsify-pagination）を大きいボタンに ====== */
+    .pagination-container {
+      position: fixed; left: 0; right: 0; bottom: 0;
+      padding: 12px 16px;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: saturate(180%) blur(4px);
+      box-shadow: 0 -6px 18px rgba(0,0,0,.12);
+      z-index: 999;
+    }
+    .pagination-item { flex: 1; }
+    .pagination-item .pagination-link {
+      display: block; text-align: center;
+      padding: 14px 16px; border-radius: 14px;
+      border: 2px solid #1f2937; font-size: 1.2rem; font-weight: 700;
+      text-decoration: none !important;
+    }
+    .pagination-item.pagination-item--previous .pagination-link { border-color: #6b7280; }
+    .pagination-item.pagination-item--next .pagination-link { border-color: #2563eb; }
+
+    /* 下部の固定ナビに隠れないよう余白を確保 */
+    .content { padding-bottom: 110px !important; }
+
+    /* 文章中の任意ボタン（必要なら使ってOK） */
+    .btn {
+      display: inline-block; padding: 12px 16px; border-radius: 12px;
+      border: 2px solid #1f2937; font-weight: 700; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    window.$docsify = {
+      name: 'イベント手順',
+      loadSidebar: true,   // _sidebar.md を使う
+      subMaxLevel: 2,
+      auto2top: true,
+      search: 'auto',
+      pagination: {
+        previousText: '← 前へ',
+        nextText: '次へ →',
+        crossChapter: true,
+        crossChapterText: true
+      }
+    };
+  </script>
+
+  <!-- 本体/検索/ページネーション -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+</body>
+</html>

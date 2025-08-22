@@ -1,0 +1,6 @@
+- [スタート](README)
+- [Step 1：ねこをうごかそう](step-1.md)
+- [Step 2：ゴールをつくろう](step-2.md)
+- [Step 3：めいろを描こう](step-3.md)
+- [Step 4：かべの当たり判定をつくろう](step-4.md)
+- [完成！](step-finish.md)
